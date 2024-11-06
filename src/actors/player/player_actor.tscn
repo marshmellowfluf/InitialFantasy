@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj4p7psrdm3wh"]
+
+[ext_resource type="PackedScene" uid="uid://cgm886iu2w0s" path="res://src/actors/base_actor.tscn" id="1_ve2hw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2el7f"]
+size = Vector2(32, 32)
+
+[node name="PlayerActor" type="Node2D"]
+
+[node name="BaseActor" parent="." instance=ExtResource("1_ve2hw")]
+collider = SubResource("RectangleShape2D_2el7f")
+
+[node name="Camera2D" type="Camera2D" parent="."]

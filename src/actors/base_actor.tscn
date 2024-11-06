@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgm886iu2w0s"]
+
+[ext_resource type="Script" path="res://src/actors/base_actor.gd" id="1_wejvs"]
+
+[node name="BaseActor" type="Node2D"]
+script = ExtResource("1_wejvs")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+
+[node name="Body" type="CharacterBody2D" parent="."]
+motion_mode = 1
+
+[node name="CollisionBox" type="CollisionShape2D" parent="Body"]
