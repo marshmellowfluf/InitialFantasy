@@ -1,7 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://7wjmq46oekoe"]
+[gd_scene load_steps=4 format=3 uid="uid://7wjmq46oekoe"]
 
 [ext_resource type="PackedScene" uid="uid://dvxhwbg77wf80" path="res://src/audio/MusicPlayer.tscn" id="1_841it"]
+[ext_resource type="Script" path="res://src/root.gd" id="1_u064v"]
+[ext_resource type="PackedScene" uid="uid://bj4p7psrdm3wh" path="res://src/actors/player/PlayerActor.tscn" id="2_5fmvs"]
 
 [node name="Root" type="Node2D"]
+script = ExtResource("1_u064v")
 
 [node name="MusicPlayer" parent="." instance=ExtResource("1_841it")]
+
+[node name="PlayerActor" parent="." instance=ExtResource("2_5fmvs")]
+
+[node name="DebugStateLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
