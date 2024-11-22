@@ -21,11 +21,3 @@ func get_input_direction():
 func update_look_direction(direction):
 	if direction and owner.look_direction != direction:
 		owner.set_look_direction(direction)
-
-func get_face_direction():
-	if not owner.look_direction:
-		return "down"
-	if abs(owner.look_direction.x) > abs(owner.look_direction.y):
-		return "left" if owner.look_direction.x < 0 else "right"
-	else:
-		return "up" if owner.look_direction.y < 0 else "down"

@@ -1,9 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgm886iu2w0s"]
+[gd_scene load_steps=4 format=3 uid="uid://cgm886iu2w0s"]
 
 [ext_resource type="Script" path="res://src/actors/BaseActor.gd" id="1_x88wx"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7lv2x"]
-size = Vector2(32, 32)
 
 [sub_resource type="Animation" id="Animation_ousbq"]
 resource_name = "RESET"
@@ -65,9 +62,6 @@ _data = {
 [node name="BaseActor" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_x88wx")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_7lv2x")
 
 [node name="Skin" type="Node2D" parent="."]
 

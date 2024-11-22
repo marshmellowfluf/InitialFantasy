@@ -5,9 +5,7 @@ extends StateMachine
 func _ready():
 	super._ready()
 	states_map = {
-		'idle': $Idle,
-		'walk': $Walk
+		'Wander' : $Wander
 	}
 
-#func _unhandled_input(event):
-#	current_state.handle_input(event)
+

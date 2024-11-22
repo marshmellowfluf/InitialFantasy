@@ -276,8 +276,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lp2vy"]
 size = Vector2(32, 32)
 
-[node name="PlayerActor" type="CharacterBody2D"]
+[node name="PlayerActor" type="CharacterBody2D" node_paths=PackedStringArray("sprite_player")]
 script = ExtResource("1_xbbdt")
+sprite_player = NodePath("AnimatedSprite2D")
 
 [node name="StateMachine" type="Node2D" parent="."]
 script = ExtResource("2_6rltr")
@@ -286,8 +287,9 @@ script = ExtResource("2_6rltr")
 script = ExtResource("3_q3l3l")
 state_name = "idle"
 
-[node name="Walk" type="Node" parent="StateMachine"]
+[node name="Walk" type="Node" parent="StateMachine" node_paths=PackedStringArray("sprite_player")]
 script = ExtResource("4_8jb2o")
+sprite_player = NodePath("../../AnimatedSprite2D")
 state_name = "walk"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

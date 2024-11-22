@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://3085o8vbripo"]
+
+[ext_resource type="Texture2D" uid="uid://bnhn23c7rjxj2" path="res://assets/ui/textbox.png" id="1_bq7xq"]
+
+[node name="DialogBox" type="NinePatchRect"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -151.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_bq7xq")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="NameLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 10.0
+offset_right = 61.0
+offset_bottom = 33.0
+text = "Name"
+
+[node name="DialogText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 41.0
+offset_right = 627.0
+offset_bottom = 135.0
+text = "Dialog"
+autowrap_mode = 2

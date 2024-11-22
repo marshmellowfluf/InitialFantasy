@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 class_name StateMachine
 
@@ -25,6 +25,9 @@ func set_active(value):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	for state in get_children():
+		if state is State:
+			state.connect("finished", _change_state)
 	states_stack.push_front(get_child(0))
 	current_state = states_stack[0]
 	if active: start()
