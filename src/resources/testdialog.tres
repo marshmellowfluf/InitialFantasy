@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogScript" load_steps=2 format=3 uid="uid://dfh6igh1gt34l"]
+
+[ext_resource type="Script" path="res://src/resources/DialogScript.gd" id="1_smx0l"]
+
+[resource]
+script = ExtResource("1_smx0l")
+text = Array[String](["DIALOG 1", "DIALOG 2", "DIALOG 3"])
+speaker = "TEST"
+texture = ""

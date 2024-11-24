@@ -293,8 +293,9 @@ sprite_player = NodePath("../../AnimatedSprite2D")
 state_name = "walk"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+process_mode = 3
 sprite_frames = SubResource("SpriteFrames_sn6p0")
 animation = &"player_walk_down"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_lp2vy")

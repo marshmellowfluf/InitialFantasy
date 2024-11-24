@@ -1,10 +1,11 @@
-[gd_scene load_steps=40 format=3 uid="uid://04nv4p3on3r8"]
+[gd_scene load_steps=41 format=3 uid="uid://04nv4p3on3r8"]
 
 [ext_resource type="Script" path="res://src/actors/npc/TestNPC.gd" id="1_jg6nc"]
 [ext_resource type="PackedScene" uid="uid://bl6uppt4q8p75" path="res://src/util/StateMachine.tscn" id="2_w4scw"]
 [ext_resource type="Script" path="res://src/actors/npc/NPCStateMachine.gd" id="3_mdel4"]
 [ext_resource type="Texture2D" uid="uid://di1m6gy7hd3j1" path="res://assets/sprites/player/player_test.png" id="4_4x5yg"]
 [ext_resource type="Script" path="res://src/actors/npc/states/movement/Wander.gd" id="4_sb2xd"]
+[ext_resource type="Script" path="res://src/components/InteractComponent.gd" id="6_720st"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mksed"]
 atlas = ExtResource("4_4x5yg")
@@ -277,6 +278,7 @@ animations = [{
 size = Vector2(32, 32)
 
 [node name="TestNpc" type="CharacterBody2D" node_paths=PackedStringArray("sprite_player")]
+collision_layer = 3
 motion_mode = 1
 script = ExtResource("1_jg6nc")
 sprite_player = NodePath("AnimatedSprite2D")
@@ -289,8 +291,12 @@ script = ExtResource("4_sb2xd")
 sprite_player = NodePath("../../AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+process_mode = 3
 sprite_frames = SubResource("SpriteFrames_utg0e")
 animation = &"npc_walk_down"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_gr7f6")
+
+[node name="InteractComponent" type="Node" parent="."]
+script = ExtResource("6_720st")

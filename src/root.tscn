@@ -1,29 +1,52 @@
-[gd_scene load_steps=6 format=3 uid="uid://7wjmq46oekoe"]
+[gd_scene load_steps=9 format=3 uid="uid://7wjmq46oekoe"]
 
 [ext_resource type="PackedScene" uid="uid://dvxhwbg77wf80" path="res://src/audio/MusicPlayer.tscn" id="1_841it"]
 [ext_resource type="Script" path="res://src/root.gd" id="1_u064v"]
 [ext_resource type="PackedScene" uid="uid://bj4p7psrdm3wh" path="res://src/actors/player/PlayerActor.tscn" id="2_5fmvs"]
 [ext_resource type="PackedScene" uid="uid://04nv4p3on3r8" path="res://src/actors/npc/TestNPC.tscn" id="4_1kty6"]
+[ext_resource type="PackedScene" uid="uid://cdc5fle85nlya" path="res://src/util/BoundaryRect.tscn" id="5_ogv5p"]
+[ext_resource type="Script" path="res://src/components/DialogComponent.gd" id="6_gu0u4"]
+[ext_resource type="Script" path="res://src/resources/DialogScript.gd" id="7_2akvc"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u6s8m"]
-size = Vector2(198, 116)
+[sub_resource type="Resource" id="Resource_wafyx"]
+resource_local_to_scene = true
+script = ExtResource("7_2akvc")
+text = Array[String](["This is test dialog! It might or might not work!", "Testing 1 2 3!", "Testing 4 5 6!"])
+speaker = "Test"
+texture = ""
 
 [node name="Root" type="Node2D"]
 script = ExtResource("1_u064v")
 
-[node name="MusicPlayer" parent="." instance=ExtResource("1_841it")]
+[node name="World" type="Node2D" parent="."]
+process_mode = 1
 
-[node name="PlayerActor" parent="." instance=ExtResource("2_5fmvs")]
+[node name="MusicPlayer" parent="World" instance=ExtResource("1_841it")]
+
+[node name="PlayerActor" parent="World" instance=ExtResource("2_5fmvs")]
 position = Vector2(306, 245)
 
-[node name="DebugStateLabel" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-
-[node name="TestNpc" parent="." instance=ExtResource("4_1kty6")]
+[node name="TestNpc" parent="World" instance=ExtResource("4_1kty6")]
 position = Vector2(303, 134)
 
-[node name="Boundary" type="CollisionShape2D" parent="TestNpc"]
-position = Vector2(141, 69)
-shape = SubResource("RectangleShape2D_u6s8m")
-disabled = true
+[node name="BoundaryRect" parent="World/TestNpc" instance=ExtResource("5_ogv5p")]
+offset_left = -99.0
+offset_top = -60.0
+offset_right = 100.0
+offset_bottom = 75.0
+
+[node name="DialogNode" type="Node" parent="World/TestNpc"]
+script = ExtResource("6_gu0u4")
+dialogscript = SubResource("Resource_wafyx")
+
+[node name="UI" type="Control" parent="."]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 480.0
+
+[node name="DebugStateLabel" type="Label" parent="UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

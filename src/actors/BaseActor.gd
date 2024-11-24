@@ -12,7 +12,7 @@ signal died()
 @export var sprite_player : AnimatedSprite2D
 
 var spriteset = ""
-@onready var collision_shape = $CollisionShape2D
+@onready var collision_shape = $CollisionBox
 
 func set_dead(value):
 	set_process_input(not value)

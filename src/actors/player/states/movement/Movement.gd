@@ -1,11 +1,7 @@
 extends State
 
 func handle_input(event):
-	# if event.is_action_pressed("ui_left") or Input.is_action_pressed("ui_left") \
-	# or event.is_action_pressed("ui_right") or Input.is_action_pressed("ui_right") \
-	# or event.is_action_pressed("ui_up") or Input.is_action_pressed("ui_up") \
-	# or event.is_action_pressed("ui_down") or Input.is_action_pressed("ui_down"):
-	# 	get_tree().set_input_as_handled()
+
 	pass
 
 func get_input_direction():

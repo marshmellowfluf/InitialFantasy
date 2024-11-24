@@ -13,10 +13,10 @@ var idle_timer = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if owner.has_node("Boundary"):
-		WANDER_RANGE = owner.get_node("Boundary").shape.get_rect()
-		WANDER_RANGE.position = owner.position
-		owner.get_node("Boundary").queue_free()
+	if owner.has_node("BoundaryRect"):
+		WANDER_RANGE = owner.get_node("BoundaryRect").get_rect()
+		WANDER_RANGE.position = owner.position - (WANDER_RANGE.size / 2)
+		owner.get_node("BoundaryRect").queue_free()
 		
 func enter():
 	speed = 0
